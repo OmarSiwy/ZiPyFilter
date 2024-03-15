@@ -5,4 +5,4 @@ assert not failed
 
 import ZiPyFilter
 
-assert zaml.load() == 1
+assert ZiPyFilter.load() == 1
