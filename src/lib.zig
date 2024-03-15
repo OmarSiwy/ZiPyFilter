@@ -15,7 +15,11 @@ const Py_BuildValue = py.Py_BuildValue;
 const PyModule_Create = py.PyModule_Create;
 const METH_NOARGS = py.METH_NOARGS;
 
-fn zaml_load() !void {}
+fn zaml_load(self: [*c]PyObject, args: [*c]PyObject) callconv(.C) [*]PyObject {
+    _ = self;
+    _ = args;
+    return Py_BuildValue("i", @as(c_int, 1));
+}
 
 // Module Definition
 var ZiPyMethods = [_]PyMethodDef{
