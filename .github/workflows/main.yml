@@ -51,9 +51,6 @@ jobs:
         uses: pre-commit/action@v2.0.3
       - name: Run simple module test
         run: python test.py
-      - name: Run benchmark
-        working-directory: ./benchmark
-        run: python benchmark.py
   build_wheels:
     name: Build wheels on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
