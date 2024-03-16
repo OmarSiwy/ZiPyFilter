@@ -2,10 +2,10 @@
 # Only build CPython (no PyPy) on x86_64 architecture
 build = "cp*x86_64"
 before-all = [
-    # Install Zig
+    # Install Zig on CentOS
     "cd /tmp",
     "curl -O https://ziglang.org/download/0.9.1/zig-linux-x86_64-0.9.1.tar.xz",
     "tar xf zig-linux-x86_64-0.9.1.tar.xz",
-    "sudo mv zig-linux-x86_64-0.9.1/zig /usr/local/bin/"
+    "mv zig-linux-x86_64-0.9.1 /usr/local/bin/zig-linux-0.9.1"
 ]
-environment = { PATH="$PATH:/usr/local/bin" }
+environment = { PATH="$PATH:/usr/local/bin/zig-linux-0.9.1" }

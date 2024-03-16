@@ -58,6 +58,6 @@ var ZiPyModule = PyModuleDef{
 };
 
 // Module Creation
-pub export fn PyInit_ZiPy() [*]PyObject {
+pub export fn PyInit_ZiPyFilter() [*]PyObject {
     return PyModule_Create(&ZiPyModule);
 }
