@@ -3,8 +3,7 @@ on:
   push:  # Trigger the workflow on push events
   pull_request:  # Keep existing triggers for pull requests
   release:
-    types:
-      - published
+    types: [published]
 
 jobs:
   test-windows:
