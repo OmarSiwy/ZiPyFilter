@@ -1,4 +1,5 @@
 // Library Imports
+const Filter = @import("src/Filter.zig");
 
 // Py Imports
 const py = @cImport({
@@ -15,7 +16,7 @@ const Py_BuildValue = py.Py_BuildValue;
 const PyModule_Create = py.PyModule_Create;
 const METH_NOARGS = py.METH_NOARGS;
 
-fn zaml_load(self: [*c]PyObject, args: [*c]PyObject) callconv(.C) [*]PyObject {
+fn zipy_load(self: [*c]PyObject, args: [*c]PyObject) callconv(.C) [*]PyObject {
     _ = self;
     _ = args;
     return Py_BuildValue("i", @as(c_int, 1));
@@ -25,7 +26,7 @@ fn zaml_load(self: [*c]PyObject, args: [*c]PyObject) callconv(.C) [*]PyObject {
 var ZiPyMethods = [_]PyMethodDef{
     PyMethodDef{
         .ml_name = "load",
-        .ml_meth = zaml_load,
+        .ml_meth = zipy_load,
         .ml_flags = METH_NOARGS,
         .ml_doc = "Load some tasty YAML.",
     },
